@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html>
-
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="bootstrap-checkbox-slider demo : " />
+<html><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="bootstrap-checkbox-slider demo : ">
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/bootstrap-checkbox-slider.css">
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
 
     <title>bootstrap-checkbox-slider demo</title>
   </head>
@@ -27,8 +25,18 @@
 
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <p>Here is a demo</p>
+      <section id="main_content" class="inner container">
+        <form class="jumbotron col-lg-4" style="border:1px solid #888888; min-height: 365px;">
+                        <div class="form-group">
+                                <label for="exampleInputEmail">Email address</label>
+                                <input type="email" class="form-control" id="exampleInputEmail" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                                <label for="exampleCheckboxEmail">This is my primary email</label>
+                                <input type="checkbox" class="checkbox-slider checkbox-slider-primary" id="exampleCheckboxEmail" checked="">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
       </section>
     </div>
 
@@ -41,5 +49,6 @@
 
     
 
-  </body>
-</html>
+  
+
+</body></html>
