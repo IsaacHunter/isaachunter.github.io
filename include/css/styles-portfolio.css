@@ -1,3 +1,7 @@
+body {
+	background-color: #eeeeee;
+}
+
 #portfolio,  #portfolio > article{
 	-webkit-perspective: 600px;
 	-moz-perspective: 600px;
@@ -56,7 +60,7 @@
 	-ms-transform: none;
 	-o-transform: none;
 	transform: none;
-	background: #f8f6f0;
+	background: #fff;
 	border: 1px solid #dddddd;
 	background-size: 100% 100%;
 	position: absolute;
@@ -77,13 +81,14 @@
 	-ms-transform: none;
 	-o-transform: none;
 	transform: none;
-	background: #f8f6f0;
+	background: #fff;
 	border: 1px solid #dddddd;
 	background-size: 100% 100%;
 	position: absolute;
 	width: 25%;
 	height: 40%;
 	overflow: hidden;
+	cursor: pointer;
 }
 #portfolio.grid > article > section.sec0 {
 	left: 0;
