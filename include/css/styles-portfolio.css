@@ -67,7 +67,6 @@ body {
 	border-left: 0 dotted;
 	border-bottom: 30px solid transparent;
 }
-}
 
 #portfolio.grid > article > section {
 	transition: top 1s, left 1s, right 1s, bottom 1s, width 1s, height 1s;
