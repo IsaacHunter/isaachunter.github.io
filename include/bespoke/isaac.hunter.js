@@ -1,3 +1,4 @@
+var one;
 
 function slidesToGrid()
 {
@@ -72,12 +73,12 @@ function viewSlides(index)
 	$('#portfolio section').removeAttr("style");
 	$('#portfolio').addClass('slides')
 	$('#portfolio').removeClass('grid');
-	var one = bespoke.horizontal.from('#portfolio.slides > article');
+	one = bespoke.horizontal.from('#portfolio.slides > article');
 	one.slide(index);
 	setTimeout(function() {
 		$('#portfolio article').addClass("animate");
 	}, 800);
-	$('#portfolio > .close').click( function () {
+	$('#portfolio > .close-x').click( function () {
 		slidesToGrid();
 	});
 } 
