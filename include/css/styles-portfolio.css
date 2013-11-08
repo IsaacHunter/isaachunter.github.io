@@ -1,0 +1,351 @@
+#portfolio,  #portfolio > article{
+	-webkit-perspective: 600px;
+	-moz-perspective: 600px;
+	-ms-perspective: 600px;
+	-o-perspective: 600px;
+	perspective: 600px;
+	position: absolute;
+	overflow: hidden;
+}
+
+#portfolio {
+	top: 135px;
+	right: 0;
+	left: 0;
+	bottom: 50px;
+}
+
+#portfolio.grid > article {
+	top: 30px;
+	right: 30px;
+	left: 30px;
+	bottom: 30px;
+}
+#portfolio.slides > article {
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+}
+
+#portfolio section {
+	vertical-align: middle;
+}
+
+#portfolio > .close {
+	font-size: 350%;
+	display: none;
+	position: absolute;
+	left: 2%;
+	top: 2%;
+	z-index: 25;
+}
+
+#portfolio.grid > article > section {
+	transition: top 1s, left 1s, right 1s, bottom 1s, width 1s, height 1s;
+	-webkit-transition: top 1s, left 1s, right 1s, bottom 1s, width 1s, height 1s;
+}
+
+#portfolio.slides > .close {
+	display: inline;
+}
+
+#portfolio.slides > article > section {
+	-webkit-transform: none;
+	-moz-transform: none;
+	-ms-transform: none;
+	-o-transform: none;
+	transform: none;
+	background: #f8f6f0;
+	border: 1px solid #dddddd;
+	background-size: 100% 100%;
+	position: absolute;
+	width: auto;
+	height: auto;
+	top: 5%;
+	right: 12%;
+	left: 12%;
+	bottom: 5%;
+	overflow: hidden;
+	opacity: 0;
+	box-shadow: 0 0 40px #ccc;
+	border: 3px solid #888;
+}
+#portfolio.grid > article > section {
+	-webkit-transform: none;
+	-moz-transform: none;
+	-ms-transform: none;
+	-o-transform: none;
+	transform: none;
+	background: #f8f6f0;
+	border: 1px solid #dddddd;
+	background-size: 100% 100%;
+	position: absolute;
+	width: 25%;
+	height: 40%;
+	overflow: hidden;
+}
+#portfolio.grid > article > section.sec0 {
+	left: 0;
+	top: 0;
+	right: 75%;
+	bottom: 60%;
+}
+#portfolio.grid > article > section.sec1 {
+	left: 37.5%;
+	top: 0;
+	right: 37.5%;
+	bottom: 60%;
+}
+#portfolio.grid > article > section.sec2 {
+	left: 75%;
+	top: 0;
+	right: 0;
+	bottom: 60%;
+}
+#portfolio.grid > article > section.sec3 {
+	left: 0;
+	top: 60%;
+	right: 75%;
+	bottom:; 0;
+}
+#portfolio.grid > article > section.sec4 {
+	left: 37.5%;
+	top: 60%;
+	right: 37.5%;
+	bottom: 0;
+}
+#portfolio.grid > article > section.sec5 {
+	left: 75%;
+	top: 60%;
+	right: 0;
+	bottom: 0;
+}
+
+body,
+#portfolio > article.animate > section.bespoke-slide {
+	-webkit-transition: -webkit-transform .7s ease, opacity .7s ease, background-color .7s ease;
+	-moz-transition: -moz-transform .7s ease, opacity .7s ease, background-color .7s ease;
+	-ms-transition: -ms-transform .7s ease, opacity .7s ease, background-color .7s ease;
+	-o-transition: -o-transform .7s ease, opacity .7s ease, background-color .7s ease;
+	transition: transform .7s ease, opacity .7s ease, background-color .7s ease;
+}
+#portfolio > article > section.bespoke-before {
+	-webkit-transform: translateX(-100%) rotateY(-40deg) translateX(-100%);
+	-moz-transform: translateX(-980px) rotateY(-72deg) translateX(-1290px);
+	-ms-transform: translateX(-980px) rotateY(-72deg) translateX(-1290px);
+	-o-transform: translateX(-980px) rotateY(-72deg) translateX(-1290px);
+	transform: translateX(-980px) rotateY(-72deg) translateX(-1290px);
+	opacity: 0;
+}
+#portfolio > article > section.bespoke-before-2 {
+	-webkit-transform: translateX(-72%) rotateY(-37deg) translateX(-74%);
+	-moz-transform: translateX(-590px) rotateY(-52deg) translateX(-780px);
+	-ms-transform: translateX(-590px) rotateY(-52deg) translateX(-780px);
+	-o-transform: translateX(-590px) rotateY(-52deg) translateX(-780px);
+	transform: translateX(-590px) rotateY(-52deg) translateX(-780px);
+	opacity: 0.3;
+}
+#portfolio > article > section.bespoke-before-1 {
+	-webkit-transform: translateX(-55%) rotateY(-20deg) translateX(-50%);
+	-moz-transform: translateX(-270px) rotateY(-30deg) translateX(-290px);
+	-ms-transform: translateX(-270px) rotateY(-30deg) translateX(-290px);
+	-o-transform: translateX(-270px) rotateY(-30deg) translateX(-290px);
+	transform: translateX(-270px) rotateY(-30deg) translateX(-290px);
+	opacity: 0.5;
+}
+#portfolio > article > section.bespoke-after {
+	-webkit-transform: translateX(100%) rotateY(40deg) translateX(100%);
+	-moz-transform: translateX(980px) rotateY(72deg) translateX(1290px);
+	-ms-transform: translateX(980px) rotateY(72deg) translateX(1290px);
+	-o-transform: translateX(980px) rotateY(72deg) translateX(1290px);
+	transform: translateX(980px) rotateY(72deg) translateX(1290px);
+	opacity: 0;
+}
+#portfolio > article > section.bespoke-after-1 {
+	-webkit-transform: translateX(55%) rotateY(20deg) translateX(50%);
+	-moz-transform: translateX(270px) rotateY(30deg) translateX(290px);
+	-ms-transform: translateX(270px) rotateY(30deg) translateX(290px);
+	-o-transform: translateX(270px) rotateY(30deg) translateX(290px);
+	transform: translateX(270px) rotateY(30deg) translateX(290px);
+	opacity: 0.5;
+}
+#portfolio > article > section.bespoke-after-2 {
+	-webkit-transform: translateX(72%) rotateY(37deg) translateX(74%);
+	-moz-transform: translateX(590px) rotateY(52deg) translateX(780px);
+	-ms-transform: translateX(590px) rotateY(52deg) translateX(780px);
+	-o-transform: translateX(590px) rotateY(52deg) translateX(780px);
+	transform: translateX(590px) rotateY(52deg) translateX(780px);
+	opacity: 0.3;
+}
+
+#portfolio > article > section.bespoke-active {
+	opacity: 1;
+	z-index: 1;
+}
+section.bespoke-inactive {
+	pointer-events: none;
+}
+
+#portfolio > article > section > .portfolio-title {
+	padding: 5%;
+	font-size: 24px;
+	font-weight: 500;
+}
+
+#portfolio > article > section > .portfolio-title:after {
+	content: '';
+}
+
+#portfolio.slides .portfolio-body
+{
+	min-width: 40%;
+}
+
+.portfolio-body
+{
+	height: 100%;
+	text-align: center;
+	min-width: 60%;
+	display: table;
+}
+
+.portfolio-title
+{
+	vertical-align: middle;
+	padding: 10px 15px;
+	margin: 0;
+	display: none;
+}
+
+.portfolio-content {
+	text-align: left;
+	padding: 0 30px;
+	font-size: 16px;
+	display: none;
+}
+
+#portfolio.slides .portfolio-content {
+	display: block;
+}
+
+#portfolio.slides .portfolio-title
+{
+	vertical-align: top;
+	font-size: 34px;
+	transition: all ease 1s;
+	-webkit-transition: all ease 1s;
+	margin-top: 20px;
+}
+
+#portfolio.slides a.portfolio-title
+{
+	display: block;
+}
+
+#portfolio.grid span.portfolio-title
+{
+	display: inline-block;
+}
+
+
+#portfolio.grid .portfolio-body:before {
+  content: '';
+  display: inline-block;
+  height: 100%; 
+  vertical-align: middle;
+  margin-right: -0.25em; /* Adjusts for spacing */
+    
+  /* For visualization 
+  background: #808080; width: 5px;
+  */
+ }
+ 
+#portfolio.slides .portfolio-img-container {
+	width: 60%;
+}
+
+.portfolio-img-container {
+	width: 40%;
+	height: 100%;
+	position: relative;
+	float: left;
+	transition: all ease 1s;
+	-webkit-transition: all ease 1s;
+}
+
+.dummy {
+  padding-top: 100%; /* forces 1:1 aspect ratio */
+}
+
+.img-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.centerer {
+  text-align: center; /* Align center inline elements */
+  font: 0/0 a;
+}
+
+.center {
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+
+.portfolio-img {
+	border: 1px solid #dddddd;
+	vertical-align: middle;
+	display: inline-block;
+	max-height: 90%;
+	max-width: 90%;
+}
+
+.portfolio-links {
+	padding-left: 15px;
+}
+
+#portfolio.grid .media:after {
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 10px;
+	z-index: 10;
+	padding: 5px 10px 5px 10px;
+	color: #fff;
+	font-size: 12px; 
+	box-shadow: 0 0 3px rgba(0,0,0,.5);
+	border-bottom-left-radius: 2px;
+	border-bottom-right-radius: 2px;
+}
+
+#portfolio.grid .tag-website:after {
+	background: url('../images/blacktocat.png') #285e8e no-repeat 95% 50%;
+	content: 'Website';
+}
+
+#portfolio.grid .tag-github:after {
+	background: url('../images/blacktocat.png') #398439 no-repeat 95% 50%;
+	content: 'GitHub Project';
+}
+#portfolio.grid .tag-webapp:after {
+	background: url('../images/blacktocat.png') #ac2925 no-repeat 95% 50%;
+	content: 'Web App';
+
+}
+
+footer {
+	position: absolute;
+	width: 100%;
+	height: 50px;
+	margin: 0;
+	bottom: 0;
+	padding: 10px 0;
+	color: #eee;
+	font-size: 80%;
+	background-color: #222;
+}

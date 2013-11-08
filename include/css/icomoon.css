@@ -1,0 +1,32 @@
+@font-face {
+	font-family: 'IconMoon';
+	src: url('../fonts/icomoon.eot');
+	src: url('../fonts/icomoon.eot?#iefix') format('embedded-opentype'), url('../fonts/icomoon.woff') format('woff'), url('../fonts/icomoon.ttf') format('truetype'), url('../fonts/icomoon.svg#icomoon') format('svg');
+}
+
+.icomoon {
+	position: relative;
+	top: 1px;
+	display: inline-block;
+	font-family: 'IconMoon';
+	-webkit-font-smoothing: antialiased;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+}
+
+.icomoon-twitter:before {
+	content: "\e600";
+}
+
+.icomoon-linkedin:before {
+	content: "\e601";
+}
+
+.icomoon-git:before {
+	content: "\e602";
+}
+
+.icomoon-logo:before {
+	content: "\e603";
+}

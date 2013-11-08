@@ -1,0 +1,217 @@
+
+#welcome {
+	width: 100%;
+	min-height: 500px;
+	position: relative;
+	overflow: hidden;
+	box-shadow: 0px 1px 3px #333;
+	border-bottom: 1px solid #333;
+}
+
+.canyon {
+	background-image:url(../canyon.jpeg);
+	background-size:1800px;
+	background-repeat:no-repeat;
+	width: 1800px;
+	height: 500px;
+	position: absolute;
+}
+
+.jumbotron {
+	padding: 15px;
+	color: #ddd;
+    position: absolute;
+    width:400px;
+    text-shadow:0 1px 3px rgba(0,0,0,.8), 0 0 10px rgba(0,0,0,.3);
+    margin-top: 50px;
+    left: 20%;
+	color: #fff;
+	background: transparent;
+}
+
+.jumbotron h1, .jumbotron h3 {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.jumbotron h1 .icomoon {
+	font-size: 70%;
+	margin-right: 10px;
+}
+
+hr {
+	margin:5px;
+}
+
+#welcome.skrollable , .jumbotron .skrollable
+{
+	position: fixed;
+}
+
+.nav {
+	text-align:center;
+}
+
+.nav-justified > li {
+	display: inline-block;
+	width:19%;
+}
+
+.nav li a:hover , .nav li a:focus {
+	background-color:#333;
+}
+
+.nav .top-border, .nav .bottom-border {
+	width: 0;
+	height: 2px;
+	background-color: #999999;
+}
+
+.nav .top-border {
+	margin-top: 5px;
+	-webkit-transition: width 0.5s ease;
+	transition: width 0.5s ease;
+}
+
+.nav .bottom-border {
+	float: right;
+	margin-bottom: 5px;
+	-webkit-transition: width 0.5s ease 0.25s;
+	transition: width 0.5s ease 0.25s;
+}
+
+.nav a:hover .top-border, .nav a:hover .bottom-border {
+	width: 100%;
+}
+
+.nav > li > a {
+	margin: 0 40px;
+	padding: 0;
+}
+
+.nav p {
+	padding: 7px;
+	margin: 0;
+}
+
+.sidebar {
+	padding-left: 30px;
+	padding-right: 30px;
+
+}
+
+.sidebar-welcome-content {
+	font-size: 125%;
+}
+
+.profile-image {
+	width: 120px;
+}
+
+.sidebar-contact {
+	border-left: #cccccc 1px solid;
+}
+
+.skill-thumbnail img {
+	width: 38px;
+	border: #999999 1px solid;
+	margin: 5px 10px;
+}
+
+.contact-thumbnail.glyphicon {
+	color: #ffffff;
+	padding: 6px;
+	font-size: 24px;
+	background-color: #333333;
+	padding: 4px 6px 8px 6px;
+}
+
+.contact-thumbnail.icomoon {
+	color: #333333;
+	font-size: 38px;
+}
+
+a.contact-thumbnail {
+	margin-right: 25px;
+}
+
+a.contact-thumbnail:hover,
+a:hover > .contact-thumbnail,
+a.skill-thumbnail:hover > img {
+	background-color: #111111;
+	box-shadow: 0px 0px 6px #666666;
+	color: #ffffff;
+	text-decoration: none;
+}
+
+span.contact-thumbnail {
+	margin-right: 15px;
+}
+
+.contact-thumbnail-label {
+	font-size: 20px;
+	color: #333333;
+}
+
+.skill-thumbnail-label {
+	color: #333333;
+}
+
+a.contact-thumbnail-container:hover {
+	color: #111111;
+	text-shadow: 0px 0px 3px #dddddd;
+	text-decoration: none;
+}
+
+.sidebar-featured > .top {
+	background-size: 100%;
+	background-position-y: -50%;
+	border: 1px solid #949494;
+	border-radius: 10px;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.sidebar-featured > .top.sidebar-recent-work
+{	
+	background-image: url('../featured-bkg.png');
+	color: #ffffff;
+}
+
+.sidebar-featured > .top.sidebar-recent-work a
+{
+	color: #ffffff;
+}
+
+.sidebar-featured > .top.sidebar-recent-work a:hover 
+{
+	color: #cccccc;
+}
+
+.sidebar-featured > .top.sidebar-currently-employed
+{	
+	background-image: url('../currently-employed-bkg.png');
+	color: #333333;
+}
+
+.sidebar-featured > .top > .col-md-8 > h3 {
+	font-weight: 200;
+}
+
+.sidebar-featured > .bottom {
+	background-color: #f7f7f9;
+	color: #333333;
+	border: 1px solid #949494;
+	border-radius: 10px;
+	border-top-right-radius: 0;
+	border-top-left-radius: 0;
+}
+
+.sidebar-featured > .top > .body,
+.sidebar-featured > .bottom > .body {
+	margin: 15px 0;
+}
+
+.sidebar-featured .sidebar-featured-content {
+	font-size: 16px;
+}
