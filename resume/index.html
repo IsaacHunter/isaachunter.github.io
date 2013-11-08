@@ -2,16 +2,13 @@
 
 
 <style>
-
-.print {
+.print, .save {
 	position: fixed;
 	top: 135px;
 	width: 70px;
 	height: 50px;
 	background-color: #999;
 	color: #000;
-	border-top-right-radius: 8px;
-	border-bottom-right-radius: 8px;
 	font-size: 30px;
 	opacity: 0.4;
 	cursor: pointer;
@@ -20,27 +17,38 @@
 	-webkit-transition: all 1s;
 	transition: all 1s;
 }
-.print:hover {
+.save {
+	top: 185px;
+	border-bottom-right-radius: 8px;
+}
+.print {
+	top: 135px;
+	border-top-right-radius: 8px;
+}
+.print:hover, .save:hover {
 	opacity: 0.6;
 	width: 130px;
+	color: #000;
 }
-.print:after {
+.print:after, .save:after {
 	position: absolute;
-	content: 'print';
 	top: 4px;
 	left: -70px;
 	font-size: 28px;
 	-webkit-transition: left 1s;
 	transition: left 1s;
 }
-.print:hover:after {
+.save:after {
+	content: 'save';
+}
+.print:after {
+	content: 'print';
+}
+.print:hover:after, .save:hover:after {
 	left: 10px;
 }
-
-.print:hover > .glyphicon {
-	//padding-right: 80px;
-}
-.print > .glyphicon {
+.print > .glyphicon,
+.save > .glyphicon {
 	padding-right: 20px;
 	padding-top: 6px;
 }
@@ -81,7 +89,6 @@
 	}
 </script>
 
-<iframe id="iFramePdf" src="../include/resume/Isaac-Hunter-Resume.pdf" style="display:none;"></iframe>
 
 	<ul class="navbar-fixed-top navbar-default navbar-inverse nav nav-justified">
 		<li>
@@ -131,7 +138,9 @@
 	</div>
 	</div>
 
-	<div class="print" onclick="printTrigger('iFramePdf');"><span class="glyphicon glyphicon-print pull-right"></span></div>
+	<iframe id="printResume" src="../include/resume/Isaac-Hunter-Resume.pdf" style="display:none;"></iframe>
+	<div class="print" onclick="printTrigger('printResume');"><span class="glyphicon glyphicon-print pull-right"></span></div>
+	<a href="../include/resume/Isaac-Hunter-Resume.pdf" target="_blank" class="save"><span class="glyphicon glyphicon-floppy-disk pull-right"></span></a>
 	
 	<div class="container resume">
 		
