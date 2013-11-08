@@ -78,7 +78,26 @@ function viewSlides(index)
 	setTimeout(function() {
 		$('#portfolio article').addClass("animate");
 	}, 800);
+	
 	$('#portfolio > .close-x').click( function () {
 		slidesToGrid();
+	});
+	
+	$(window).keyup( function (e) {
+		var key = e.which;
+		if (key === 27 && $('#portfolio').hasClass('slides')) {
+			slidesToGrid();
+		}
+	});
+		
+	$(window).mousewheel(function(event, delta, deltaX, deltaY) {
+		if ( $('#portfolio').hasClass('slides')) {
+			if (delta > 0) //can also use deltaY
+				one.prev();
+			else if (delta < 0)
+				one.next();
+			
+			return false; // prevent default
+		}
 	});
 } 
