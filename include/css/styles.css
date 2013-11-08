@@ -1,3 +1,6 @@
+body {
+	background-color: #f1f1f1;
+}
 
 #welcome {
 	width: 100%;
@@ -6,6 +9,7 @@
 	overflow: hidden;
 	box-shadow: 0px 1px 3px #333;
 	border-bottom: 1px solid #333;
+	z-index: 11;
 }
 
 .canyon {
@@ -114,34 +118,44 @@ hr {
 
 .skill-thumbnail img {
 	width: 38px;
-	border: #999999 1px solid;
+	border: #ccc 1px solid;
 	margin: 5px 10px;
+	opacity: 0.8;
 }
 
 .contact-thumbnail.glyphicon {
 	color: #ffffff;
 	padding: 6px;
 	font-size: 24px;
-	background-color: #333333;
+	background-color: #000;
+	opacity: 0.5;
 	padding: 4px 6px 8px 6px;
 }
 
 .contact-thumbnail.icomoon {
-	color: #333333;
+	color: #000;
 	font-size: 38px;
+	opacity: 0.5;
 }
 
 a.contact-thumbnail {
 	margin-right: 25px;
 }
 
+a:hover > .glyphicon.contact-thumbnail,
 a.contact-thumbnail:hover,
-a:hover > .contact-thumbnail,
-a.skill-thumbnail:hover > img {
-	background-color: #111111;
-	box-shadow: 0px 0px 6px #666666;
-	color: #ffffff;
+a:hover > .contact-thumbnail
+{
+	opacity: 0.7;
 	text-decoration: none;
+}
+
+a.skill-thumbnail:hover > img {
+	//background-color: #111111;
+	//box-shadow: 0px 0px 6px #666666;
+	//color: #ffffff;
+	text-decoration: none;
+	opacity: 1;
 }
 
 span.contact-thumbnail {
@@ -149,7 +163,7 @@ span.contact-thumbnail {
 }
 
 .contact-thumbnail-label {
-	font-size: 20px;
+	font-size: 17px;
 	color: #333333;
 }
 
@@ -190,7 +204,8 @@ a.contact-thumbnail-container:hover {
 
 .sidebar-featured > .top.sidebar-currently-employed
 {	
-	background-image: url('../currently-employed-bkg.png');
+	//background-image: url('../currently-employed-bkg.png');
+	background-color: #bbb;
 	color: #333333;
 }
 
@@ -199,7 +214,7 @@ a.contact-thumbnail-container:hover {
 }
 
 .sidebar-featured > .bottom {
-	background-color: #f7f7f9;
+	background-color: #fff;
 	color: #333333;
 	border: 1px solid #949494;
 	border-radius: 10px;

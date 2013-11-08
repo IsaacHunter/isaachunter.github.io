@@ -2,6 +2,27 @@ body {
 	height: 1500px!important;
 }
 
+.home
+{
+	width:100%; z-index:10
+}
+
+.home > .container
+{
+	background-color: #fff;
+	padding: 50px 0 50px 0;
+	border: 1px solid #ccc;
+}
+
+
+.about {
+	width: 100%; z-index:10; bottom: 0px;
+}
+
+.about .page-header {
+	border-bottom: 1px solid #ccc;
+}
+
 footer {
 	padding:40px 0px 10px 0;
 	background-color:#222;

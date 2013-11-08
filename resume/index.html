@@ -1,6 +1,59 @@
 <html>
 
 
+<style>
+
+.print {
+	position: fixed;
+	top: 135px;
+	width: 70px;
+	height: 50px;
+	background-color: #999;
+	color: #000;
+	border-top-right-radius: 8px;
+	border-bottom-right-radius: 8px;
+	font-size: 30px;
+	opacity: 0.4;
+	cursor: pointer;
+	border: 1px solid #666;
+	z-index: 11;
+	-webkit-transition: all 1s;
+	transition: all 1s;
+}
+.print:hover {
+	opacity: 0.6;
+	width: 130px;
+}
+.print:after {
+	position: absolute;
+	content: 'print';
+	top: 4px;
+	left: -70px;
+	font-size: 28px;
+	-webkit-transition: left 1s;
+	transition: left 1s;
+}
+.print:hover:after {
+	left: 10px;
+}
+
+.print:hover > .glyphicon {
+	//padding-right: 80px;
+}
+.print > .glyphicon {
+	padding-right: 20px;
+	padding-top: 6px;
+}
+.resume {
+	position: relative;
+	top: 135px;
+	text-align: center;
+	padding-bottom: 40px;"
+}
+
+
+</style>
+
 <!-- STYLE SHEETS -->
 <link href="../include/css/bootstrap.css" rel="stylesheet" type="text/css" / >
 <link href="../include/css/styles-portfolio.css" rel="stylesheet" type="text/css">
@@ -20,6 +73,15 @@
 
 </head>
 <body>
+<script>
+	function printTrigger(elementId) {
+		var getMyFrame = document.getElementById(elementId);
+		getMyFrame.focus();
+		getMyFrame.contentWindow.print();
+	}
+</script>
+
+<iframe id="iFramePdf" src="../include/resume/Isaac-Hunter-Resume.pdf" style="display:none;"></iframe>
 
 	<ul class="navbar-fixed-top navbar-default navbar-inverse nav nav-justified">
 		<li>
@@ -69,18 +131,20 @@
 	</div>
 	</div>
 
+	<div class="print" onclick="printTrigger('iFramePdf');"><span class="glyphicon glyphicon-print pull-right"></span></div>
+	
+	<div class="container resume">
+		
+		<img src="../include/resume/page1.jpg" alt="" style="width: 80%; border: 2px solid #ddd; margin: 40px 0; "/>
+		<img src="../include/resume/page2.jpg" alt="" style="width: 80%; border: 2px solid #ddd; margin: 40px 0;"/>
+	</div>
 
-		<div class="container" style="position: relative; top: 135px; z-index: -1; text-align: center; padding-bottom: 40px;">
-			<img src="../include/resume/page1.jpg" alt="" style="width: 80%; border: 2px solid #ddd; margin: 40px 0; "/>
-			<img src="../include/resume/page2.jpg" alt="" style="width: 80%; border: 2px solid #ddd; margin: 40px 0;"/>
+	<footer>
+		<div class="container">
+			<hr />
+			Made by Isaac &copy; 2013
 		</div>
-
-		<footer>
-			<div class="container">
-				<hr />
-		        Made by Isaac &copy; 2013
-		    </div>
-		</footer>	
+	</footer>	
 
 
 	</body>
