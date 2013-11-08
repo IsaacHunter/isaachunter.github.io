@@ -6,12 +6,12 @@ function slidesToGrid()
 	$('#portfolio section').removeAttr("style");
 	$('#portfolio section.bespoke-active').css({
 				'z-index':'50',
-				"left" : "10%",
-				"bottom" : "10%",
-				"top" : "10%",
-				"right" : "10%",
-				'width' : '80%',
-				'height' : '80%'
+				"left" : "12%",
+				"bottom" : "5%",
+				"top" : "5%",
+				"right" : "12%",
+				'width' : '76%',
+				'height' : '90%'
 	});
 	setTimeout(function() {
 		viewGrid();
