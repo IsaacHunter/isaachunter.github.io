@@ -27,18 +27,16 @@
         d = ctx.fillCircle(canvasX, canvasY, radius, fillColor);
 		
 		var w       = canvas.width = canvas.height = 100;
-		var drawn   = null;
 		var len     = d.data.length;
-		
+		var count 	= 0;
 		for(var i =0; i< len; i++) {
 			if(!d.data[i]) {
-				drawn = false;
+				//do nothing
 			}else if(d.data[i]) {
-				drawn = true;
-				alert('Something drawn on Canvas');
-				break;
+				count ++;
 			}
 		}
+		$("#message").text(count);
 		
     };
 
