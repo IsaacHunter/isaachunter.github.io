@@ -1,0 +1,46 @@
+body {
+	background-color: #000;
+}
+#canvas {
+	background-size: 100%;
+	overflow: hidden;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 150px;
+	display: none;
+}
+#circle {
+	display: block;
+	position: fixed;
+	width: 160px;
+	height: 160px;
+	border-radius: 160px;
+	border: #f1f1f1 solid 1px;
+}
+.jumbotron {
+	background-color: rgba(00, 00, 00, 0.7);
+	color: #fff;
+	position: fixed;
+	bottom: 300px;
+	transition: bottom 2s;
+	-webkit-transition: bottom 2s;
+	width: 100%;
+	padding-right: 150px;
+	padding-left: 150px;
+	text-align: right;
+	margin-bottom: 0;
+}
+.jumbotron.alignBottom {
+	bottom: 0px;
+}
+#image {
+	max-width: 90%;
+	max-height: 90%;
+	position: fixed;
+	display: block;
+	top: 200%;
+}
+canvas {
+	transition: opacity 2s;
+	-webkit-transition: opacity 2s;
+}

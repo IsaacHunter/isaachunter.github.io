@@ -1,91 +1,137 @@
+var canvas = {};
+var ctx;
+var container;
+var canSwipe = false;
 
-    
+var images = [
+    {
+        foreground: 'background.png',
+        background: 'background.jpg'
+    },
+    {
+        foreground: 'background3.jpg',
+        background: 'background2.jpg'
+    }
+]
 
+var currentImg = images[0];
 
-    
-    function kinectMove(kinectX, kinectY, ctx) {
+function kinectMove(kinectX, kinectY, ctx) {
 
-        ctx.fillCircle = function(x, y, radius, fillColor) {
-          this.fillStyle = fillColor;
-          this.beginPath();
-          this.moveTo(x, y);
-          this.arc(x, y, radius, 0, Math.PI * 2, false);
-          this.fill();
-        };
-
-        $("#x").text("x: " + kinectX);
-        $("#y").text("y: " + kinectY);
-        var x = kinectX * 10 - 100;
-        var y = kinectY * 10 - 150;
-        var radius = 40; // or whatever
-        var fillColor = '#ff0000';
-        ctx.globalCompositeOperation = 'destination-out';
-        ctx.fillCircle(x, y, radius, fillColor);
-
+    ctx.fillCircle = function(x, y, radius, fillColor) {
+      this.fillStyle = fillColor;
+      this.beginPath();
+      this.moveTo(x, y);
+      this.arc(x, y, radius, 0, Math.PI * 2, false);
+      this.fill();
+	  return this.getImageData(0,0,this.canvas.clientWidth,this.canvas.clientHeight);
     };
 
+    $(".jumbotron").addClass("alignBottom")
+	
+    var radius = 80; // or whatever
+	
+    $("#x").text("x: " + kinectX);
+    $("#y").text("y: " + kinectY);
+	var circleCoords = { "left": kinectX, "top": kinectY }
+	
+	
+	$("#circle").css(circleCoords);
+	var offset = $("#canvas").offset();
+	
+    var canvasX = kinectX + radius - offset.left;
+    var canvasY = kinectY + radius - offset.top;
+    var fillColor = '#ff0000';
+    ctx.globalCompositeOperation = 'destination-out';
+    d = ctx.fillCircle(canvasX, canvasY, radius, fillColor);
+	
+	var len = d.data.length;
+    var count = 0;
+	for(var i = 0; i< len; i++) {
+		if(d.data[i]) {
+			count ++;
+		}
+	}
+    var percentage = Math.floor((count / len) * 100);
+	$("#message").text(percentage + '%');
 
+    if (percentage && percentage < 15) {
+        canSwipe = true;
+        $("canvas").css({'opacity' : '0'});
+        $(".jumbotron").removeClass("alignBottom")
+        $('#message').text("Swipe down to start next image")
+    }
+	
+};
 
-    function createCanvas(parent, width, height) {
-        var canvas = {};
-        canvas.node = document.createElement('canvas');
-        canvas.context = canvas.node.getContext('2d');
-        canvas.node.width = width || 100;
-        canvas.node.height = height || 100;
-        parent.appendChild(canvas.node);
-        return canvas;
+function loadImage() {
+    $("canvas").css({'opacity' : '1'});
+
+    if (images.indexOf(currentImg) === images.length - 1) {
+        currentImg = images[0];
+    }
+    else {
+        currentImg = images[images.indexOf(currentImg) + 1];
     }
 
-    function init(idOfCnavas, width, height, fillColor) {
+    ctx.globalCompositeOperation = 'source-over';
+    ctx.clearRect (0, 0, canvas.width, canvas.height);
 
-        var container = document.getElementById(idOfCnavas);
-        var canvas = createCanvas(container, width, height);
-        var ctx = canvas.context;
-        // define a custom fillCircle method
-        
-        DepthJS = {
-          onKinectInit: function() {
-            $("#message").text("DepthJS + Kinect detected+!@");
-            $("#registration").text("Hand not in view");
-          },
-          onRegister: function(x, y, z, data) {
-            $("#message").text("Hand in view" + (data == null ? "" : ": " + data));
-            $("#x").text("x: " + x);
-            $("#y").text("y: " + y);
-            $("#z").text("z: " + z);
-          },
-          onUnregister: function() {
+    $('#image').attr("src", currentImg.foreground);
+    $("#image").load(function() {
+        canvas.node.width = $(this).width();
+        canvas.node.height = $(this).height();
+        img = document.getElementById("image");
+        ctx.drawImage(img, 0, 0, $(this).width(), $(this).height());
+        container.style.display = 'block';
+        $('#canvas').css({
+            'background-image' : 'url(' + currentImg.background + ')', 
+            'width' : $(this).width(),
+            'height' : $(this).height()
+        });
+        canSwipe = false;
+    });
+};
+
+function init() {
+    container = document.getElementById('canvas');
+    canvas.node = document.createElement('canvas');
+    canvas.context = canvas.node.getContext('2d');
+    container.appendChild(canvas.node);
+    canvas.node.width = 100;
+    canvas.node.height = 100;
+    ctx = canvas.context;
+
+    DepthJS = {
+        onKinectInit: function() {
+            $("#message").text("Kinect Detected. Wave Your Hand");
+        },
+        onRegister: function(x, y, z, data) {
+        },
+        onUnregister: function() {
             $("#message").text("Hand not in view");
-            $("#x").text("");
-            $("#y").text("");
-            $("#z").text("");
-          },
-          onMove: function(x, y, z) {
-            kinectMove(x, y, ctx);
-          },
-          onSwipeLeft: function() {
-            $("#misc").text("swipe left");
-          },
-          onSwipeRight: function() {
-            $("#misc").text("swipe right");
-          },
-          onSwipeDown: function() {
-            $("#misc").text("swipe down");
-          },
-          onSwipeUp: function() {
-            $("#misc").text("swipe up");
-          },
-          onPush: function() {
-            $("#misc").text("push");
-          },
-          onPull: function() {
-            $("#misc").text("pull");
-          }
-        };
+        },
+        onMove: function(x, y, z) {
+            if (!canSwipe) {
+                x = x * 40 - 1000;
+                y = y * 40 - 1000;
+                kinectMove(x, y, ctx);
+            }
+        },
+        onSwipeLeft: function() {
+        },
+        onSwipeRight: function() {
+        },
+        onSwipeDown: function() {  
+            if (canSwipe) { loadImage(); } 
+        },
+        onSwipeUp: function() {
+        },
+        onPush: function() {
+        },
+        onPull: function() {
+        }
+    };
 
-        ctx.clearTo = function(fillColor) {
-            ctx.fillStyle = fillColor;
-            ctx.fillRect(0, 0, width, height);
-        };
-        ctx.clearTo(fillColor || "#ddd");
-    }
+    loadImage(1140, 641);
+};
