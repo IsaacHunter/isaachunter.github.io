@@ -12,9 +12,9 @@ body {
 #circle {
 	display: block;
 	position: fixed;
-	width: 160px;
-	height: 160px;
-	border-radius: 160px;
+	width: 120px;
+	height: 120px;
+	border-radius: 120px;
 	border: #f1f1f1 solid 1px;
 }
 .jumbotron {
