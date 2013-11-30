@@ -5,13 +5,26 @@ var canSwipe = false;
 
 var images = [
     {
-        foreground: 'background.png',
-        background: 'background.jpg'
+        foreground: "1new.jpg",
+        background: "1old.jpg"
     },
     {
-        foreground: 'background3.jpg',
-        background: 'background2.jpg'
+        foreground: "2new.jpg",
+        background: "2old.jpg"
+    },
+    {
+        foreground: "3new.jpg",
+        background: "3old.jpg"
+    },
+    {
+        foreground: "4new.jpg",
+        background: "4old.jpg"
+    },
+    {
+        foreground: "5new.jpg",
+        background: "5old.jpg"
     }
+
 ]
 
 var currentImg = images[0];
@@ -55,7 +68,7 @@ function kinectMove(kinectX, kinectY, ctx) {
     var percentage = Math.floor((count / len) * 100);
 	$("#message").text(percentage + '%');
 
-    if (percentage && percentage < 15) {
+    if (percentage && percentage < 2) {
         canSwipe = true;
         $("canvas").css({'opacity' : '0'});
         $(".jumbotron").removeClass("alignBottom")
@@ -133,5 +146,5 @@ function init() {
         }
     };
 
-    loadImage(1140, 641);
+    loadImage();
 };
