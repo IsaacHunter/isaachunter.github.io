@@ -42,7 +42,7 @@ function kinectMove(kinectX, kinectY, ctx) {
 
     $(".jumbotron").addClass("alignBottom")
 	
-    var radius = 80; // or whatever
+    var radius = 60; // or whatever
 	
     $("#x").text("x: " + kinectX);
     $("#y").text("y: " + kinectY);
@@ -117,7 +117,7 @@ function init() {
 
     DepthJS = {
         onKinectInit: function() {
-            $("#message").text("Kinect Detected. Wave Your Hand");
+            $("#message").text(Wave Your Hand");
         },
         onRegister: function(x, y, z, data) {
         },
