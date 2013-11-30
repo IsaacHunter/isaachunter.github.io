@@ -29,7 +29,7 @@ var images = [
 
 var currentImg = images[0];
 
-function kinectMove(kinectX, kinectY, ctx) {
+function kinectMove(kinectX, kinectY, ctx, radius) {
 
     ctx.fillCircle = function(x, y, radius, fillColor) {
       this.fillStyle = fillColor;
@@ -41,8 +41,6 @@ function kinectMove(kinectX, kinectY, ctx) {
     };
 
     $(".jumbotron").addClass("alignBottom")
-	
-    var radius = 60; // or whatever
 	
     $("#x").text("x: " + kinectX);
     $("#y").text("y: " + kinectY);
@@ -114,6 +112,14 @@ function init() {
     canvas.node.width = 100;
     canvas.node.height = 100;
     ctx = canvas.context;
+    
+    var radius = 60; // or whatever
+    
+    $('#circle').css({
+        'width' : radius * 2 + 'px',
+        'height' : radius * 2 + 'px',
+        'border-radius': radius * 2 + 'px';
+    });
 
     DepthJS = {
         onKinectInit: function() {
@@ -128,7 +134,7 @@ function init() {
             if (!canSwipe) {
                 x = x * 40 - 1000;
                 y = y * 40 - 1000;
-                kinectMove(x, y, ctx);
+                kinectMove(x, y, ctx, radius);
             }
         },
         onSwipeLeft: function() {
